@@ -14,12 +14,15 @@ std::string cTester::readOneFile(const std::string &fileName) const
     file.open(fileName);
     if (!file)
     {
-        std::cout << "Cant find this file : " << fileName << std::endl;
+        std::cerr << "Cant find this file : " << fileName << std::endl;
         return {};
     }
-    std::stringstream ss;
-    ss << file.rdbuf();
-    return ss.str();
+    std::string rez = "";
+    std::getline(file, rez);
+
+    // std::stringstream ss;
+    // ss << file.rdbuf();
+    return rez;
 }
 
 //================================================================================
