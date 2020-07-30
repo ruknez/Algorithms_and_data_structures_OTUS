@@ -7,4 +7,4 @@ cmake ..
 make
 cp tickets_cli ..
 cd ..
-./tickets_cli
+./tickets_cli 2> /dev/null
